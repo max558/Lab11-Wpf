@@ -1,0 +1,36 @@
+﻿<!--
+    Используйте Microsoft Visual Studio для создания геометрической формы подобно образцу. 
+    Для создания круга можно использовать два эллипса разного диаметра. 
+    Для создания перечеркивающей линии можно использовать прямоугольник, добавив к нему трансформацию – поворот.
+    -->
+    <Window x:Class="_01___task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01___task"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="400" Height="450" >
+    <StackPanel>
+        <Path Fill="Red" Stroke="Black">
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Union">
+                    <CombinedGeometry.Geometry1>
+                        <GeometryGroup >
+                                <EllipseGeometry Center="200,212" RadiusX="180" RadiusY="180"/>  
+                                <EllipseGeometry Center="200,212" RadiusX="145" RadiusY="145"/>
+                        </GeometryGroup>
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <RectangleGeometry Rect="20,190,350,40">
+                            <RectangleGeometry.Transform>
+                                <RotateTransform CenterX="200" CenterY="200" Angle="-45"/>
+                            </RectangleGeometry.Transform>
+                        </RectangleGeometry>
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry> 
+            </Path.Data>
+        </Path>
+        
+    </StackPanel>
+</Window>
